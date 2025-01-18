@@ -15,8 +15,8 @@ enum ServicesAssembler {
     
     // MARK: - BitcoinRateService
     
-    static let bitcoinRateService: PerformOnce<BitcoinRateService> = {
-        lazy var analyticsService = Self.analyticsService()
+    static let bitcoinRateService: BitcoinRateService = {
+        lazy var analyticsService = Self.analyticsService
         
         let service = BitcoinRateServiceImpl()
         
@@ -27,14 +27,10 @@ enum ServicesAssembler {
             )
         }
         
-        return { service }
+        return  service
     }()
     
     // MARK: - AnalyticsService
     
-    static let analyticsService: PerformOnce<AnalyticsService> = {
-        let service = AnalyticsServiceImpl()
-        
-        return { service }
-    }()
+    static let analyticsService: AnalyticsService = AnalyticsServiceImpl()
 }
