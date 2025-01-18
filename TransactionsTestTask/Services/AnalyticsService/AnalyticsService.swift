@@ -12,30 +12,56 @@ import Foundation
 /// The minimal needed filters are: event name and date range
 /// The service should be covered by unit tests
 protocol AnalyticsService: AnyObject {
-    
+
     func trackEvent(name: String, parameters: [String: String])
+    func getEvents(filters: Set<AnalyticsFilters>) async -> [AnalyticsEvent]
 }
 
-final class AnalyticsServiceImpl {
+public final class AnalyticsServiceImpl {
     
-    private var events: [AnalyticsEvent] = []
+    private let eventSorageActor: EventStorageActor
     
     // MARK: - Init
     
     init() {
+        eventSorageActor = EventStorageActor()
+    }
+    
+    func trackEvent(name: String, parameters: [String: String], date: Date = .now) async {
+        let event = AnalyticsEvent(
+            name: name,
+            parameters: parameters,
+            date: date
+        )
         
+        await eventSorageActor.add(event)
+    }
+}
+
+fileprivate extension AnalyticsServiceImpl {
+    
+    /// We could track and fetch events from different threads, so we need sync mechanism
+    private actor EventStorageActor {
+        private var events: [AnalyticsEvent] = []
+        
+        func add(_ event: AnalyticsEvent) {
+            events.append(event)
+        }
+        
+        func getEvents(filters: Set<AnalyticsFilters>) -> [AnalyticsEvent] {
+            events.filter { $0.filter(using: filters) }
+        }
     }
 }
 
 extension AnalyticsServiceImpl: AnalyticsService {
+    func getEvents(filters: Set<AnalyticsFilters>) async -> [AnalyticsEvent] {
+        await eventSorageActor.getEvents(filters: filters)
+    }
     
     func trackEvent(name: String, parameters: [String: String]) {
-        let event = AnalyticsEvent(
-            name: name,
-            parameters: parameters,
-            date: .now
-        )
-        
-        events.append(event)
+        Task.detached(priority: .utility) { [weak self] in
+            await self?.trackEvent(name: name, parameters: parameters)
+        }
     }
 }

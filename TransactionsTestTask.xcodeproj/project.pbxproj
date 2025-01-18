@@ -20,6 +20,8 @@
 		1CA3B6622D22B0F600176711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA3B6612D22B0F600176711 /* Assets.xcassets */; };
 		1CA3B6652D22B0F600176711 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1CA3B6642D22B0F600176711 /* Base */; };
 		1CA3B6702D22B0F600176711 /* TransactionsTestTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B66F2D22B0F600176711 /* TransactionsTestTaskTests.swift */; };
+		5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */; };
+		5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		1CA3B66B2D22B0F600176711 /* TransactionsTestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsTestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA3B66F2D22B0F600176711 /* TransactionsTestTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTestTaskTests.swift; sourceTree = "<group>"; };
 		1CA3B6752D22B0F600176711 /* TransactionsTestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsTestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsFilters.swift; sourceTree = "<group>"; };
+		5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +91,9 @@
 		0D15405F2D22EF3400D6D63F /* AnalyticsService */ = {
 			isa = PBXGroup;
 			children = (
-				0DF1D1462D22DD44001626E7 /* AnalyticsService.swift */,
 				0D1540602D22EF5D00D6D63F /* AnalyticsEvent.swift */,
+				5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */,
+				0DF1D1462D22DD44001626E7 /* AnalyticsService.swift */,
 			);
 			path = AnalyticsService;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		1CA3B66E2D22B0F600176711 /* TransactionsTestTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */,
 				1CA3B66F2D22B0F600176711 /* TransactionsTestTaskTests.swift */,
 			);
 			path = TransactionsTestTaskTests;
@@ -288,6 +294,7 @@
 			files = (
 				0D1540612D22EF5D00D6D63F /* AnalyticsEvent.swift in Sources */,
 				0DF1D1432D22DCD8001626E7 /* PerformOnce.swift in Sources */,
+				5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */,
 				0DF1D1452D22DD06001626E7 /* BitcoinRateService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
 				1CA3B65A2D22B0F500176711 /* ViewController.swift in Sources */,
@@ -302,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */,
 				1CA3B6702D22B0F600176711 /* TransactionsTestTaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
