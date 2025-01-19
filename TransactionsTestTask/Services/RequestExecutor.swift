@@ -39,6 +39,8 @@ extension MobileRequestExecutor: RequestExecutor {
     func execute<T: Decodable>(request: URLRequest) async throws -> T {
         let (data, response) = try await session.data(for: request)
         
+        guard !Task.isCancelled else { throw CancellationError() }
+        
         guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
             throw NSError(domain: "NetworkExecutor",
                           code: (response as? HTTPURLResponse)?.statusCode ?? 0,

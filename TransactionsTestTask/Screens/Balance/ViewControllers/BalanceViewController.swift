@@ -27,7 +27,6 @@ class BalanceViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupBalanceView()
-        testRate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,17 +54,5 @@ class BalanceViewController: UIViewController {
             balanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             balanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-    }
-    
-    private func testRate() {
-        // TODO: remove
-        Task {
-            do {
-                let rate = try await ServicesAssembler.bitcoinRateService.getRate()
-                print(rate)
-            } catch {
-                print(error)
-            }
-        }
     }
 }

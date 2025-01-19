@@ -24,8 +24,17 @@
 		5F5495B42D3BF81C002D043C /* BalanceViewController.NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */; };
 		5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */; };
 		5F6069562D3C5D4300CDDC6E /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */; };
-		5F6069582D3CFE9E00CDDC6E /* MobileRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069572D3CFE9500CDDC6E /* MobileRequestExecutor.swift */; };
+		5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */; };
 		5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60695B2D3D048A00CDDC6E /* BitcoinPriceResponse.swift */; };
+		5F60695E2D3D276900CDDC6E /* RepeatableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60695D2D3D276100CDDC6E /* RepeatableTimer.swift */; };
+		5F6069602D3D2ACA00CDDC6E /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60695F2D3D2AC800CDDC6E /* Rate.swift */; };
+		5F6069642D3D39D700CDDC6E /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069632D3D39D100CDDC6E /* BalancePresenter.swift */; };
+		5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069652D3D39E800CDDC6E /* BalanceInteractor.swift */; };
+		5F6069682D3D401900CDDC6E /* MobileBitcoinRateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */; };
+		5F60696B2D3D42CA00CDDC6E /* MockRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60696A2D3D42C100CDDC6E /* MockRequestExecutor.swift */; };
+		5F60696D2D3D42F100CDDC6E /* MockAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */; };
+		5F60696F2D3D431C00CDDC6E /* MockRepeatableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */; };
+		5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */; };
 		5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */; };
 		5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */; };
 /* End PBXBuildFile section */
@@ -69,8 +78,17 @@
 		5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.NavigationDelegate.swift; sourceTree = "<group>"; };
 		5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+BalanceNavigation.swift"; sourceTree = "<group>"; };
 		5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
-		5F6069572D3CFE9500CDDC6E /* MobileRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRequestExecutor.swift; sourceTree = "<group>"; };
+		5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
 		5F60695B2D3D048A00CDDC6E /* BitcoinPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceResponse.swift; sourceTree = "<group>"; };
+		5F60695D2D3D276100CDDC6E /* RepeatableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatableTimer.swift; sourceTree = "<group>"; };
+		5F60695F2D3D2AC800CDDC6E /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		5F6069632D3D39D100CDDC6E /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
+		5F6069652D3D39E800CDDC6E /* BalanceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInteractor.swift; sourceTree = "<group>"; };
+		5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBitcoinRateServiceTests.swift; sourceTree = "<group>"; };
+		5F60696A2D3D42C100CDDC6E /* MockRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestExecutor.swift; sourceTree = "<group>"; };
+		5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnalyticsService.swift; sourceTree = "<group>"; };
+		5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepeatableTimer.swift; sourceTree = "<group>"; };
+		5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeyValueStorage.swift; sourceTree = "<group>"; };
 		5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsFilters.swift; sourceTree = "<group>"; };
 		5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,8 +131,9 @@
 		0DF1D13E2D22DC2D001626E7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5F60695D2D3D276100CDDC6E /* RepeatableTimer.swift */,
 				0DF1D1442D22DCFF001626E7 /* BitcoinRateService.swift */,
-				5F6069572D3CFE9500CDDC6E /* MobileRequestExecutor.swift */,
+				5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */,
 				0DF1D13F2D22DC4B001626E7 /* ServicesAssembler.swift */,
 				0D15405F2D22EF3400D6D63F /* AnalyticsService */,
 				5F9041792D3BBE250067E9F9 /* Persistence */,
@@ -144,13 +163,12 @@
 		1CA3B6542D22B0F500176711 /* TransactionsTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				5F6069592D3D047900CDDC6E /* Models */,
 				5F9041762D3BBBBB0067E9F9 /* App */,
 				5F5495A62D3BC70F002D043C /* Coordinator */,
+				5F6069592D3D047900CDDC6E /* Models */,
 				5F9041782D3BBCE80067E9F9 /* Resources */,
+				5F6069612D3D394D00CDDC6E /* Screens */,
 				0DF1D13E2D22DC2D001626E7 /* Services */,
-				5F5495A92D3BD24B002D043C /* View */,
-				5F9041772D3BBBEB0067E9F9 /* ViewControllers */,
 			);
 			path = TransactionsTestTask;
 			sourceTree = "<group>";
@@ -158,6 +176,8 @@
 		1CA3B66E2D22B0F600176711 /* TransactionsTestTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F6069692D3D42A100CDDC6E /* Mocks */,
+				5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */,
 				5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */,
 			);
 			path = TransactionsTestTaskTests;
@@ -172,22 +192,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		5F5495A92D3BD24B002D043C /* View */ = {
+		5F5495A92D3BD24B002D043C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5F5495AA2D3BD2E6002D043C /* BalanceView.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5F5495B22D3BEBF4002D043C /* Balance */ = {
-			isa = PBXGroup;
-			children = (
-				5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */,
-				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
-				5F5495B02D3BEBC2002D043C /* BalanceViewController+BalanceViewDelegate.swift */,
-			);
-			path = Balance;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5F6069542D3C5D2E00CDDC6E /* KeyValueStorage */ = {
@@ -201,6 +211,7 @@
 		5F6069592D3D047900CDDC6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F60695F2D3D2AC800CDDC6E /* Rate.swift */,
 				5F60695A2D3D048000CDDC6E /* Responses */,
 			);
 			path = Models;
@@ -212,6 +223,36 @@
 				5F60695B2D3D048A00CDDC6E /* BitcoinPriceResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		5F6069612D3D394D00CDDC6E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5F6069622D3D395A00CDDC6E /* Balance */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5F6069622D3D395A00CDDC6E /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				5F6069652D3D39E800CDDC6E /* BalanceInteractor.swift */,
+				5F6069632D3D39D100CDDC6E /* BalancePresenter.swift */,
+				5F5495A92D3BD24B002D043C /* Views */,
+				5F9041772D3BBBEB0067E9F9 /* ViewControllers */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		5F6069692D3D42A100CDDC6E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */,
+				5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */,
+				5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */,
+				5F60696A2D3D42C100CDDC6E /* MockRequestExecutor.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		5F9041762D3BBBBB0067E9F9 /* App */ = {
@@ -227,7 +268,9 @@
 		5F9041772D3BBBEB0067E9F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5F5495B22D3BEBF4002D043C /* Balance */,
+				5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */,
+				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
+				5F5495B02D3BEBC2002D043C /* BalanceViewController+BalanceViewDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -383,8 +426,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6069602D3D2ACA00CDDC6E /* Rate.swift in Sources */,
 				0D1540612D22EF5D00D6D63F /* AnalyticsEvent.swift in Sources */,
 				5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */,
+				5F6069642D3D39D700CDDC6E /* BalancePresenter.swift in Sources */,
+				5F60695E2D3D276900CDDC6E /* RepeatableTimer.swift in Sources */,
+				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
 				5F5495B12D3BEBD5002D043C /* BalanceViewController+BalanceViewDelegate.swift in Sources */,
 				5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */,
 				5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */,
@@ -393,7 +440,7 @@
 				5F6069562D3C5D4300CDDC6E /* KeyValueStorage.swift in Sources */,
 				0DF1D1452D22DD06001626E7 /* BitcoinRateService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
-				5F6069582D3CFE9E00CDDC6E /* MobileRequestExecutor.swift in Sources */,
+				5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */,
 				1CA3B65A2D22B0F500176711 /* BalanceViewController.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
@@ -407,7 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F60696D2D3D42F100CDDC6E /* MockAnalyticsService.swift in Sources */,
+				5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */,
+				5F6069682D3D401900CDDC6E /* MobileBitcoinRateServiceTests.swift in Sources */,
 				5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */,
+				5F60696F2D3D431C00CDDC6E /* MockRepeatableTimer.swift in Sources */,
+				5F60696B2D3D42CA00CDDC6E /* MockRequestExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
