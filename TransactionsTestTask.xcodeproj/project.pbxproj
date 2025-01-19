@@ -20,8 +20,7 @@
 		5F5495A82D3BC722002D043C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495A72D3BC71D002D043C /* AppCoordinator.swift */; };
 		5F5495AB2D3BD2F0002D043C /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495AA2D3BD2E6002D043C /* BalanceView.swift */; };
 		5F5495AF2D3BD602002D043C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5F5495AE2D3BD602002D043C /* Localizable.xcstrings */; };
-		5F5495B12D3BEBD5002D043C /* BalanceViewController+BalanceViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B02D3BEBC2002D043C /* BalanceViewController+BalanceViewDelegate.swift */; };
-		5F5495B42D3BF81C002D043C /* BalanceViewController.NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */; };
+		5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */; };
 		5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */; };
 		5F6069562D3C5D4300CDDC6E /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */; };
 		5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */; };
@@ -35,6 +34,7 @@
 		5F60696D2D3D42F100CDDC6E /* MockAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */; };
 		5F60696F2D3D431C00CDDC6E /* MockRepeatableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */; };
 		5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */; };
+		5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */; };
 		5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */; };
 		5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */; };
 /* End PBXBuildFile section */
@@ -74,8 +74,7 @@
 		5F5495A72D3BC71D002D043C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5F5495AA2D3BD2E6002D043C /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		5F5495AE2D3BD602002D043C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		5F5495B02D3BEBC2002D043C /* BalanceViewController+BalanceViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+BalanceViewDelegate.swift"; sourceTree = "<group>"; };
-		5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.NavigationDelegate.swift; sourceTree = "<group>"; };
+		5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+Protocols.swift"; sourceTree = "<group>"; };
 		5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+BalanceNavigation.swift"; sourceTree = "<group>"; };
 		5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnalyticsService.swift; sourceTree = "<group>"; };
 		5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepeatableTimer.swift; sourceTree = "<group>"; };
 		5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeyValueStorage.swift; sourceTree = "<group>"; };
+		5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+Configuration.swift"; sourceTree = "<group>"; };
 		5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsFilters.swift; sourceTree = "<group>"; };
 		5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,8 +238,8 @@
 			children = (
 				5F6069652D3D39E800CDDC6E /* BalanceInteractor.swift */,
 				5F6069632D3D39D100CDDC6E /* BalancePresenter.swift */,
-				5F5495A92D3BD24B002D043C /* Views */,
 				5F9041772D3BBBEB0067E9F9 /* ViewControllers */,
+				5F5495A92D3BD24B002D043C /* Views */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -268,9 +268,9 @@
 		5F9041772D3BBBEB0067E9F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5F5495B32D3BF80E002D043C /* BalanceViewController.NavigationDelegate.swift */,
 				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
-				5F5495B02D3BEBC2002D043C /* BalanceViewController+BalanceViewDelegate.swift */,
+				5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */,
+				5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -432,7 +432,6 @@
 				5F6069642D3D39D700CDDC6E /* BalancePresenter.swift in Sources */,
 				5F60695E2D3D276900CDDC6E /* RepeatableTimer.swift in Sources */,
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
-				5F5495B12D3BEBD5002D043C /* BalanceViewController+BalanceViewDelegate.swift in Sources */,
 				5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */,
 				5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */,
 				5F5495AB2D3BD2F0002D043C /* BalanceView.swift in Sources */,
@@ -445,7 +444,8 @@
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
 				1CA3B6602D22B0F500176711 /* TransactionsTestTask.xcdatamodeld in Sources */,
-				5F5495B42D3BF81C002D043C /* BalanceViewController.NavigationDelegate.swift in Sources */,
+				5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */,
+				5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,10 @@ import UIKit
 
 class BalanceViewController: UIViewController {
     
-    unowned let navigationDelegate: NavigationDelegate
+    let eventsHandler: EventHandler
     
-    init(navigationDelegate: NavigationDelegate) {
-        self.navigationDelegate = navigationDelegate
+    init(viewEventsHandler: EventHandler) {
+        self.eventsHandler = viewEventsHandler
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -20,13 +20,13 @@ class BalanceViewController: UIViewController {
     }
     
     // MARK: - BalanceView instance
-    private let balanceView = BalanceView()
-    
+    let balanceView = BalanceView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupBalanceView()
+        eventsHandler.handleScreenLoading()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +39,11 @@ class BalanceViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        eventsHandler.handleScreenAppearing()
+    }
+    
     private func setupView() {
         view.backgroundColor = .white
     }
@@ -46,13 +51,13 @@ class BalanceViewController: UIViewController {
     // MARK: - Setup BalanceView
     private func setupBalanceView() {
         view.addSubview(balanceView)
-        balanceView.delegate = self
+        balanceView.delegate = eventsHandler
         balanceView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             balanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            balanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            balanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            balanceView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            balanceView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
 }

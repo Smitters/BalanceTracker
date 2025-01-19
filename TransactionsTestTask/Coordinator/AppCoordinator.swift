@@ -11,6 +11,8 @@ final class AppCoordinator {
     let window: UIWindow
     let navigationController: UINavigationController
     
+    lazy var servicesAssembler = ServicesAssembler()
+    
     init(scene: UIWindowScene) {
         window = UIWindow(windowScene: scene)
         navigationController = UINavigationController()
@@ -18,7 +20,11 @@ final class AppCoordinator {
     }
     
     func start() {
-        let balanceViewController = BalanceViewController(navigationDelegate: self)
+        let interactor = BalanceInteractor(bitcoinService: servicesAssembler.bitcoinRateService)
+        let presenter = BalancePresenter(router: self, interactor: interactor)
+        let balanceViewController = BalanceViewController(viewEventsHandler: presenter)
+        presenter.view = balanceViewController
+        interactor.output = presenter
         navigationController.setViewControllers([balanceViewController], animated: false)
         window.makeKeyAndVisible()
     }

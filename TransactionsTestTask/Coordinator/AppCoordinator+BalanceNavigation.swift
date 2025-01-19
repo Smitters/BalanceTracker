@@ -7,7 +7,11 @@
 
 import UIKit
 
-extension AppCoordinator: BalanceViewController.NavigationDelegate {
+protocol BalanceNavigationDelegate: AnyObject {
+    func showAddTransactionScreen()
+}
+
+extension AppCoordinator: BalanceNavigationDelegate {
     func showAddTransactionScreen() {
         let mock = UIViewController()
         mock.view.backgroundColor = .white

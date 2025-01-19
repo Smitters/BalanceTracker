@@ -30,7 +30,7 @@ class BalanceView: UIView {
         label.text = String(format: String(localized: "balance.rate"), "...")
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
         return label
     }()
     
@@ -107,7 +107,7 @@ class BalanceView: UIView {
         
         // Constraints for addTransactionButton
         NSLayoutConstraint.activate([
-            addTransactionButton.topAnchor.constraint(equalTo: topupButton.bottomAnchor, constant: 16),
+            addTransactionButton.topAnchor.constraint(equalTo: topupButton.bottomAnchor, constant: 24),
             addTransactionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addTransactionButton.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8),
             addTransactionButton.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -8),
