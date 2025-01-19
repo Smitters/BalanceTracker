@@ -34,6 +34,7 @@ public final class AnalyticsServiceImpl {
             date: date
         )
         
+        print("\(date) Tracked event: \(name), params: \(parameters)")
         await eventSorageActor.add(event)
     }
 }

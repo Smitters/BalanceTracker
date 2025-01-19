@@ -13,11 +13,13 @@ final class AppCoordinator {
     
     init(scene: UIWindowScene) {
         window = UIWindow(windowScene: scene)
-        navigationController = UINavigationController(rootViewController: BalanceViewController())
+        navigationController = UINavigationController()
         window.rootViewController = navigationController
     }
     
     func start() {
+        let balanceViewController = BalanceViewController(navigationDelegate: self)
+        navigationController.setViewControllers([balanceViewController], animated: false)
         window.makeKeyAndVisible()
     }
 }

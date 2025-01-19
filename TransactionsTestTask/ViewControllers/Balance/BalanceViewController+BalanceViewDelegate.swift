@@ -12,7 +12,6 @@ extension BalanceViewController: BalanceViewDelegate {
     }
     
     func didTapAddTransactionButton() {
-        // Handle add transaction logic
-        print("Add transaction button tapped")
+        navigationDelegate.showAddTransactionScreen()
     }
 }

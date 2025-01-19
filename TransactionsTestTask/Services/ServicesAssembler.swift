@@ -16,18 +16,7 @@ enum ServicesAssembler {
     // MARK: - BitcoinRateService
     
     static let bitcoinRateService: BitcoinRateService = {
-        lazy var analyticsService = Self.analyticsService
-        
-        let service = BitcoinRateServiceImpl()
-        
-        service.onRateUpdate = {
-            analyticsService.trackEvent(
-                name: "bitcoin_rate_update",
-                parameters: ["rate": String(format: "%.2f", $0)]
-            )
-        }
-        
-        return  service
+        MobileBitcoinRateService(requestExecutor: MobileRequestExecutor(), analytics: analyticsService)
     }()
     
     // MARK: - AnalyticsService
