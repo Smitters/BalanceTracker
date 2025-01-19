@@ -6,7 +6,7 @@
 
 import UIKit
 
-class BalanceViewController: UIViewController {
+final class BalanceViewController: UIViewController {
     
     let eventsHandler: EventHandler
     

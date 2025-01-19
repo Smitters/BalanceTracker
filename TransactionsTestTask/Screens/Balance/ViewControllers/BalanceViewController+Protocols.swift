@@ -6,26 +6,50 @@
 //
 
 import Foundation
+import UIKit
 
 extension BalanceViewController {
     protocol EventHandler: BalanceViewDelegate {
-        func handleScreenLoading()
+        @MainActor func handleScreenLoading()
+        @MainActor func handleTopUp(amount: Double)
     }
     
     protocol BalanceViewConfigurable: AnyObject {
-        func update(rate: ViewRate)
+        @MainActor func update(rate: ViewRate)
+        @MainActor func update(balance: Double)
+        
+        @MainActor func showTopUpAlert()
     }
 }
 
 extension BalanceViewController: BalanceViewController.BalanceViewConfigurable {
-    func update(rate: ViewRate) {
+    @MainActor func update(rate: ViewRate) {
         switch rate {
         case .loading:
             self.balanceView.setRate(nil)
         case .loaded(let value):
-            DispatchQueue.main.async {
-                self.balanceView.setRate(value)
-            }
+            self.balanceView.setRate(value)
         }
+    }
+    
+    @MainActor func update(balance: Double) {
+        balanceView.updateBalance(with: balance)
+    }
+    
+    @MainActor func showTopUpAlert() {
+        let alert = UIAlertController(
+            title: String(localized: "top.up.alert.title"),
+            message: String(localized: "top.up.alert.message"),
+            preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = String(localized: "amount")
+            textField.keyboardType = .decimalPad
+        }
+        alert.addAction(UIAlertAction(title: String(localized: "confirm"), style: .default) { [weak self] _ in
+            guard let text = alert.textFields?.first?.text, let amount = Double(text) else { return }
+            self?.eventsHandler.handleTopUp(amount: amount)
+        })
+        alert.addAction(UIAlertAction(title: String(localized: "cancel"), style: .cancel))
+        present(alert, animated: true)
     }
 }

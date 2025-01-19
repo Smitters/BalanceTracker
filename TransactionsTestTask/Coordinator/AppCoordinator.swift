@@ -20,7 +20,9 @@ final class AppCoordinator {
     }
     
     func start() {
-        let interactor = BalanceInteractor(bitcoinService: servicesAssembler.bitcoinRateService)
+        let interactor = BalanceInteractor(
+            bitcoinService: servicesAssembler.bitcoinRateService,
+            balanceService: servicesAssembler.balanceService)
         let presenter = BalancePresenter(router: self, interactor: interactor)
         let balanceViewController = BalanceViewController(viewEventsHandler: presenter)
         presenter.view = balanceViewController

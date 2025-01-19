@@ -9,29 +9,45 @@ import Foundation
 import Combine
 
 protocol BalanceInteractorOutput: AnyObject {
-    func rateReceived(_ rate: Rate)
+    @MainActor func rateReceived(_ rate: Rate)
 }
 
 protocol BalanceInteractorInput: AnyObject {
     func startRateUpdates()
+    func getBalance() -> Double
+    
+    @MainActor func topUpBalance(_ amount: Double) throws -> Double
 }
 
 class BalanceInteractor {
     let bitcoinService: BitcoinRateService
+    let balanceService: BalanceService
+    
     weak var output: BalanceInteractorOutput?
     
     var cancellable: AnyCancellable?
     
-    init(bitcoinService: BitcoinRateService) {
+    init(bitcoinService: BitcoinRateService, balanceService: BalanceService) {
         self.bitcoinService = bitcoinService
+        self.balanceService = balanceService
     }
 }
 
 extension BalanceInteractor: BalanceInteractorInput {
     func startRateUpdates() {
         cancellable = bitcoinService.ratePublisher.sink { [weak self] rate in
-            self?.output?.rateReceived(rate)
+            Task {
+                await self?.output?.rateReceived(rate)
+            }
         }
         bitcoinService.start()
+    }
+    
+    func getBalance() -> Double {
+        balanceService.getCurrentBalance()
+    }
+    
+    @MainActor func topUpBalance(_ amount: Double) throws -> Double {
+        return try balanceService.add(amount)
     }
 }

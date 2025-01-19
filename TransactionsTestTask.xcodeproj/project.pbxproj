@@ -14,7 +14,7 @@
 		1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B6552D22B0F500176711 /* AppDelegate.swift */; };
 		1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B6572D22B0F500176711 /* SceneDelegate.swift */; };
 		1CA3B65A2D22B0F500176711 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B6592D22B0F500176711 /* BalanceViewController.swift */; };
-		1CA3B6602D22B0F500176711 /* TransactionsTestTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B65E2D22B0F500176711 /* TransactionsTestTask.xcdatamodeld */; };
+		1CA3B6602D22B0F500176711 /* Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B65E2D22B0F500176711 /* Wallet.xcdatamodeld */; };
 		1CA3B6622D22B0F600176711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA3B6612D22B0F600176711 /* Assets.xcassets */; };
 		1CA3B6652D22B0F600176711 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1CA3B6642D22B0F600176711 /* Base */; };
 		5F5495A82D3BC722002D043C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495A72D3BC71D002D043C /* AppCoordinator.swift */; };
@@ -36,6 +36,8 @@
 		5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */; };
 		5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */; };
 		5F6069752D3D64EE00CDDC6E /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069742D3D64E100CDDC6E /* BalanceService.swift */; };
+		5F6C7C222D3D6CC70063CAC8 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */; };
+		5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7C232D3D70F40063CAC8 /* CoreDataManager.swift */; };
 		5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */; };
 		5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +61,7 @@
 		1CA3B6552D22B0F500176711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA3B6572D22B0F500176711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1CA3B6592D22B0F500176711 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
-		1CA3B65F2D22B0F500176711 /* TransactionsTestTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TransactionsTestTask.xcdatamodel; sourceTree = "<group>"; };
+		1CA3B65F2D22B0F500176711 /* Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wallet.xcdatamodel; sourceTree = "<group>"; };
 		1CA3B6612D22B0F600176711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CA3B6642D22B0F600176711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CA3B6662D22B0F600176711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+Configuration.swift"; sourceTree = "<group>"; };
 		5F6069742D3D64E100CDDC6E /* BalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceService.swift; sourceTree = "<group>"; };
 		5F6069762D3D6B9200CDDC6E /* TransactionsTestTask.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TransactionsTestTask.xctestplan; sourceTree = "<group>"; };
+		5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		5F6C7C232D3D70F40063CAC8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsFilters.swift; sourceTree = "<group>"; };
 		5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,9 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				5F6069762D3D6B9200CDDC6E /* TransactionsTestTask.xctestplan */,
+				1CA3B6532D22B0F500176711 /* Products */,
 				1CA3B6542D22B0F500176711 /* TransactionsTestTask */,
 				1CA3B66E2D22B0F600176711 /* TransactionsTestTaskTests */,
-				1CA3B6532D22B0F500176711 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +204,7 @@
 		5F6069592D3D047900CDDC6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */,
 				5F60695F2D3D2AC800CDDC6E /* Rate.swift */,
 				5F60695A2D3D048000CDDC6E /* Responses */,
 			);
@@ -277,8 +282,9 @@
 		5F9041792D3BBE250067E9F9 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				5F6C7C232D3D70F40063CAC8 /* CoreDataManager.swift */,
 				5F6069542D3C5D2E00CDDC6E /* KeyValueStorage */,
-				1CA3B65E2D22B0F500176711 /* TransactionsTestTask.xcdatamodeld */,
+				1CA3B65E2D22B0F500176711 /* Wallet.xcdatamodeld */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				5F6069642D3D39D700CDDC6E /* BalancePresenter.swift in Sources */,
 				5F60695E2D3D276900CDDC6E /* RepeatableTimer.swift in Sources */,
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
+				5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */,
 				5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */,
 				5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */,
 				5F5495AB2D3BD2F0002D043C /* BalanceView.swift in Sources */,
@@ -399,11 +406,12 @@
 				0DF1D1452D22DD06001626E7 /* BitcoinRateService.swift in Sources */,
 				5F6069752D3D64EE00CDDC6E /* BalanceService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
+				5F6C7C222D3D6CC70063CAC8 /* Transaction.swift in Sources */,
 				5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */,
 				1CA3B65A2D22B0F500176711 /* BalanceViewController.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
-				1CA3B6602D22B0F500176711 /* TransactionsTestTask.xcdatamodeld in Sources */,
+				1CA3B6602D22B0F500176711 /* Wallet.xcdatamodeld in Sources */,
 				5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */,
 				5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
@@ -701,13 +709,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1CA3B65E2D22B0F500176711 /* TransactionsTestTask.xcdatamodeld */ = {
+		1CA3B65E2D22B0F500176711 /* Wallet.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1CA3B65F2D22B0F500176711 /* TransactionsTestTask.xcdatamodel */,
+				1CA3B65F2D22B0F500176711 /* Wallet.xcdatamodel */,
 			);
-			currentVersion = 1CA3B65F2D22B0F500176711 /* TransactionsTestTask.xcdatamodel */;
-			path = TransactionsTestTask.xcdatamodeld;
+			currentVersion = 1CA3B65F2D22B0F500176711 /* Wallet.xcdatamodel */;
+			path = Wallet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -17,21 +17,28 @@ final class BalancePresenter {
 }
 
 extension BalancePresenter: BalanceViewController.EventHandler {
-    func handleScreenLoading() {
+    @MainActor func handleScreenLoading() {
         interactor.startRateUpdates()
+        let balance = interactor.getBalance()
+        view?.update(balance: balance)
     }
     
-    func didTapTopupButton() {
-        
+    @MainActor func handleTopUp(amount: Double) {
+        guard let newBalance = try? interactor.topUpBalance(amount) else { return }
+        view?.update(balance: newBalance)
     }
     
-    func didTapAddTransactionButton() {
+    @MainActor func didTapTopupButton() {
+        view?.showTopUpAlert()
+    }
+    
+    @MainActor func didTapAddTransactionButton() {
         router.showAddTransactionScreen()
     }
 }
 
 extension BalancePresenter: BalanceInteractorOutput {
-    func rateReceived(_ rate: Rate) {
+    @MainActor func rateReceived(_ rate: Rate) {
         switch rate {
         case .noData: view?.update(rate: .loading)
         case .cached(let value): view?.update(rate: .loaded(value))

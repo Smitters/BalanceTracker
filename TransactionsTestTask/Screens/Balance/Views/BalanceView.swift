@@ -9,8 +9,8 @@ import UIKit
 
 // MARK: - BalanceViewDelegate Protocol
 protocol BalanceViewDelegate: AnyObject {
-    func didTapTopupButton()
-    func didTapAddTransactionButton()
+    @MainActor func didTapTopupButton()
+    @MainActor func didTapAddTransactionButton()
 }
 
 // MARK: - BalanceView
