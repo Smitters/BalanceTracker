@@ -14,7 +14,7 @@ protocol BalanceNavigationDelegate: AnyObject {
 extension AppCoordinator: BalanceNavigationDelegate {
     func showAddTransactionScreen() {
         let mock = UIViewController()
-        mock.view.backgroundColor = .white
+        mock.view.backgroundColor = UIColor(resource: .viewBackground)
         navigationController.pushViewController(mock, animated: true)
     }
 }

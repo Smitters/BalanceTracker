@@ -39,13 +39,8 @@ class BalanceViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        eventsHandler.handleScreenAppearing()
-    }
-    
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(resource: .viewBackground)
     }
     
     // MARK: - Setup BalanceView

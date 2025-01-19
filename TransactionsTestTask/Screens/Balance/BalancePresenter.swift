@@ -21,10 +21,6 @@ extension BalancePresenter: BalanceViewController.EventHandler {
         interactor.startRateUpdates()
     }
     
-    func handleScreenAppearing() {
-        
-    }
-    
     func didTapTopupButton() {
         
     }

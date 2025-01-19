@@ -13,11 +13,17 @@ protocol KeyValueStorage {
 }
 
 final class UserDefaultsKeyValueStorage: KeyValueStorage {
+    private let userDefaultsQueue = DispatchQueue(label: "UserDefaultsKeyValueStorage.syncQueue")
+    
     func setValue(_ value: Double, forKey key: String) {
-        UserDefaults.standard.setValue(value, forKey: key)
+        userDefaultsQueue.sync {
+            UserDefaults.standard.setValue(value, forKey: key)
+        }
     }
     
     func getValue(forKey key: String) -> Double? {
-        UserDefaults.standard.double(forKey: key)
+        return userDefaultsQueue.sync {
+            UserDefaults.standard.double(forKey: key)
+        }
     }
 }

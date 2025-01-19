@@ -10,7 +10,6 @@ import Foundation
 extension BalanceViewController {
     protocol EventHandler: BalanceViewDelegate {
         func handleScreenLoading()
-        func handleScreenAppearing()
     }
     
     protocol BalanceViewConfigurable: AnyObject {

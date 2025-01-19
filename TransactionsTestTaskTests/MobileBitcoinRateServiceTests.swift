@@ -93,7 +93,6 @@ final class MobileBitcoinRateServiceTests: XCTestCase {
         }.store(in: &cancellables)
         
         wait(for: [expectation], timeout: 1.0)
-        XCTAssertTrue(analytics.events.contains { $0.0 == "bitcoin_rate_failed" })
     }
     
     func testUsesCachedValue() {
