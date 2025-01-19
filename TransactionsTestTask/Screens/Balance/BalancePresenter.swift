@@ -24,8 +24,17 @@ extension BalancePresenter: BalanceViewController.EventHandler {
     }
     
     @MainActor func handleTopUp(amount: Double) {
-        guard let newBalance = try? interactor.topUpBalance(amount) else { return }
-        view?.update(balance: newBalance)
+        do {
+            let transactionResult = try interactor.topUpBalance(amount)
+            
+            switch transactionResult {
+            case .completed(let transaction, newAmount: let newAmount):
+                view?.update(balance: newAmount)
+            case .canceled: break
+            }
+        } catch {
+            // TODO: handle error
+        }
     }
     
     @MainActor func didTapTopupButton() {
@@ -33,7 +42,7 @@ extension BalancePresenter: BalanceViewController.EventHandler {
     }
     
     @MainActor func didTapAddTransactionButton() {
-        router.showAddTransactionScreen()
+        router.showAddTransactionScreen(resultDelegate: self)
     }
 }
 
@@ -44,5 +53,11 @@ extension BalancePresenter: BalanceInteractorOutput {
         case .cached(let value): view?.update(rate: .loaded(value))
         case .fetched(let value): view?.update(rate: .loaded(value))
         }
+    }
+}
+
+extension BalancePresenter: AddTransactionResultHandler {
+    func handle(result: TransactionResult) {
+        // TODO: handle
     }
 }

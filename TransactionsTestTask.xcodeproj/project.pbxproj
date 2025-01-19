@@ -21,7 +21,7 @@
 		5F5495AB2D3BD2F0002D043C /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495AA2D3BD2E6002D043C /* BalanceView.swift */; };
 		5F5495AF2D3BD602002D043C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5F5495AE2D3BD602002D043C /* Localizable.xcstrings */; };
 		5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */; };
-		5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */; };
+		5F5495B62D3BF8C9002D043C /* AppCoordinator+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5495B52D3BF8C2002D043C /* AppCoordinator+Navigation.swift */; };
 		5F6069562D3C5D4300CDDC6E /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */; };
 		5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */; };
 		5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60695B2D3D048A00CDDC6E /* BitcoinPriceResponse.swift */; };
@@ -40,6 +40,11 @@
 		5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C7C232D3D70F40063CAC8 /* CoreDataManager.swift */; };
 		5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */; };
 		5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */; };
+		5F92B1C02D3D9773000A811C /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1BF2D3D9769000A811C /* AddTransactionViewController.swift */; };
+		5F92B1C42D3D97C8000A811C /* AddTransactionViewController+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1C32D3D97C8000A811C /* AddTransactionViewController+Protocols.swift */; };
+		5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */; };
+		5F92B1CA2D3D9B59000A811C /* AddTransactionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */; };
+		5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +75,7 @@
 		5F5495AA2D3BD2E6002D043C /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		5F5495AE2D3BD602002D043C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+Protocols.swift"; sourceTree = "<group>"; };
-		5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+BalanceNavigation.swift"; sourceTree = "<group>"; };
+		5F5495B52D3BF8C2002D043C /* AppCoordinator+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Navigation.swift"; sourceTree = "<group>"; };
 		5F6069552D3C5D3E00CDDC6E /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		5F6069572D3CFE9500CDDC6E /* RequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
 		5F60695B2D3D048A00CDDC6E /* BitcoinPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceResponse.swift; sourceTree = "<group>"; };
@@ -90,6 +95,11 @@
 		5F6C7C232D3D70F40063CAC8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5F9041722D3AFC830067E9F9 /* AnalyticsFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsFilters.swift; sourceTree = "<group>"; };
 		5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
+		5F92B1BF2D3D9769000A811C /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		5F92B1C32D3D97C8000A811C /* AddTransactionViewController+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+Protocols.swift"; sourceTree = "<group>"; };
+		5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
+		5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionResult.swift; sourceTree = "<group>"; };
+		5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5495A72D3BC71D002D043C /* AppCoordinator.swift */,
-				5F5495B52D3BF8C2002D043C /* AppCoordinator+BalanceNavigation.swift */,
+				5F5495B52D3BF8C2002D043C /* AppCoordinator+Navigation.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */,
+				5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */,
 				5F60695F2D3D2AC800CDDC6E /* Rate.swift */,
 				5F60695A2D3D048000CDDC6E /* Responses */,
 			);
@@ -222,6 +233,7 @@
 		5F6069612D3D394D00CDDC6E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5F92B1BE2D3D9685000A811C /* AddTransaction */,
 				5F6069622D3D395A00CDDC6E /* Balance */,
 			);
 			path = Screens;
@@ -232,7 +244,7 @@
 			children = (
 				5F6069652D3D39E800CDDC6E /* BalanceInteractor.swift */,
 				5F6069632D3D39D100CDDC6E /* BalancePresenter.swift */,
-				5F9041772D3BBBEB0067E9F9 /* ViewControllers */,
+				5F9041772D3BBBEB0067E9F9 /* ViewController */,
 				5F5495A92D3BD24B002D043C /* Views */,
 			);
 			path = Balance;
@@ -259,14 +271,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		5F9041772D3BBBEB0067E9F9 /* ViewControllers */ = {
+		5F9041772D3BBBEB0067E9F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
 				5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */,
 				5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5F9041782D3BBCE80067E9F9 /* Resources */ = {
@@ -287,6 +299,25 @@
 				1CA3B65E2D22B0F500176711 /* Wallet.xcdatamodeld */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5F92B1BE2D3D9685000A811C /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */,
+				5F92B1C12D3D97A9000A811C /* ViewController */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		5F92B1C12D3D97A9000A811C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F92B1BF2D3D9769000A811C /* AddTransactionViewController.swift */,
+				5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */,
+				5F92B1C32D3D97C8000A811C /* AddTransactionViewController+Protocols.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,10 +427,14 @@
 				5F9041732D3AFC830067E9F9 /* AnalyticsFilters.swift in Sources */,
 				5F6069642D3D39D700CDDC6E /* BalancePresenter.swift in Sources */,
 				5F60695E2D3D276900CDDC6E /* RepeatableTimer.swift in Sources */,
+				5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */,
+				5F92B1C42D3D97C8000A811C /* AddTransactionViewController+Protocols.swift in Sources */,
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
 				5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */,
-				5F5495B62D3BF8C9002D043C /* AppCoordinator+BalanceNavigation.swift in Sources */,
+				5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */,
+				5F5495B62D3BF8C9002D043C /* AppCoordinator+Navigation.swift in Sources */,
 				5F60695C2D3D048F00CDDC6E /* BitcoinPriceResponse.swift in Sources */,
+				5F92B1CA2D3D9B59000A811C /* AddTransactionResult.swift in Sources */,
 				5F5495AB2D3BD2F0002D043C /* BalanceView.swift in Sources */,
 				5F5495A82D3BC722002D043C /* AppCoordinator.swift in Sources */,
 				5F6069562D3C5D4300CDDC6E /* KeyValueStorage.swift in Sources */,
@@ -408,6 +443,7 @@
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
 				5F6C7C222D3D6CC70063CAC8 /* Transaction.swift in Sources */,
 				5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */,
+				5F92B1C02D3D9773000A811C /* AddTransactionViewController.swift in Sources */,
 				1CA3B65A2D22B0F500176711 /* BalanceViewController.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,

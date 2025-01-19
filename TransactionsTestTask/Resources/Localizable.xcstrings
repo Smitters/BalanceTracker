@@ -99,6 +99,22 @@
         }
       }
     },
+    "enter.amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter amount"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть суму"
+          }
+        }
+      }
+    },
     "top.up.alert.message" : {
       "localizations" : {
         "en" : {

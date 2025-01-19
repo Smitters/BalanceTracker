@@ -16,10 +16,11 @@ protocol BalanceInteractorInput: AnyObject {
     func startRateUpdates()
     func getBalance() -> Double
     
-    @MainActor func topUpBalance(_ amount: Double) throws -> Double
+    @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult
 }
 
 class BalanceInteractor {
+    
     let bitcoinService: BitcoinRateService
     let balanceService: BalanceService
     
@@ -36,9 +37,7 @@ class BalanceInteractor {
 extension BalanceInteractor: BalanceInteractorInput {
     func startRateUpdates() {
         cancellable = bitcoinService.ratePublisher.sink { [weak self] rate in
-            Task {
-                await self?.output?.rateReceived(rate)
-            }
+            Task { await self?.output?.rateReceived(rate) }
         }
         bitcoinService.start()
     }
@@ -47,7 +46,7 @@ extension BalanceInteractor: BalanceInteractorInput {
         balanceService.getCurrentBalance()
     }
     
-    @MainActor func topUpBalance(_ amount: Double) throws -> Double {
+    @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult {
         return try balanceService.add(amount)
     }
 }
