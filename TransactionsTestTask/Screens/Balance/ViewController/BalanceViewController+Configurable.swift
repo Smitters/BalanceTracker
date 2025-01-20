@@ -34,6 +34,7 @@ extension BalanceViewController: BalanceViewController.Configurable {
         alert.addTextField { textField in
             textField.placeholder = String(localized: "amount")
             textField.keyboardType = .decimalPad
+            textField.delegate = self
         }
         alert.addAction(UIAlertAction(title: String(localized: "confirm"), style: .default) { [weak self] _ in
             guard let text = alert.textFields?.first?.text, let amount = Double(text) else { return }

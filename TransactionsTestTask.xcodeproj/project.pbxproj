@@ -56,6 +56,7 @@
 		5FE38E8E2D3E9033004F7BC7 /* BalanceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E8D2D3E902A004F7BC7 /* BalanceProtocols.swift */; };
 		5FE38E902D3E90EA004F7BC7 /* RateUIRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E8F2D3E90EA004F7BC7 /* RateUIRepresentation.swift */; };
 		5FE38E922D3E9193004F7BC7 /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */; };
+		5FE38E942D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		5FE38E8D2D3E902A004F7BC7 /* BalanceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceProtocols.swift; sourceTree = "<group>"; };
 		5FE38E8F2D3E90EA004F7BC7 /* RateUIRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUIRepresentation.swift; sourceTree = "<group>"; };
 		5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
+		5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,9 +302,10 @@
 			isa = PBXGroup;
 			children = (
 				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
-				5FE38E892D3E6781004F7BC7 /* BalanceViewController+DataSource.swift */,
-				5F6069722D3D59E100CDDC6E /* BalanceViewController+ViewRate.swift */,
 				5F5495B32D3BF80E002D043C /* BalanceViewController+Configurable.swift */,
+				5FE38E892D3E6781004F7BC7 /* BalanceViewController+DataSource.swift */,
+				5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */,
+				5F6069722D3D59E100CDDC6E /* BalanceViewController+ViewRate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
 				5FE38E7F2D3E5D01004F7BC7 /* CategoryUIRepresentation.swift in Sources */,
 				5F92B1D62D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift in Sources */,
+				5FE38E942D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift in Sources */,
 				5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */,
 				5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */,
 				5F5495B62D3BF8C9002D043C /* AppCoordinator+Navigation.swift in Sources */,
