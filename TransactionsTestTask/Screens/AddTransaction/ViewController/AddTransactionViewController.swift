@@ -28,17 +28,19 @@ final class AddTransactionViewController: UIViewController {
         return textField
     }()
     
-    private let collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .init(resource: .viewBackground)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(
+            ExpenseCategoryCollectionViewCell.self,
+            forCellWithReuseIdentifier: ExpenseCategoryCollectionViewCell.identifier)
         return collectionView
     }()
     
-    private let confirmButton: UIButton = {
+    private(set) lazy var confirmButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(String(localized: "confirm"), for: .normal)
         button.backgroundColor = .systemBlue
@@ -63,9 +65,16 @@ final class AddTransactionViewController: UIViewController {
         setupSubviews()
         setupConstraints()
         
-        // Setup CollectionView
+        // Setup Delegates
         collectionView.dataSource = self
         collectionView.delegate = self
+        amountTextField.delegate = self
+        confirmButton.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        eventsHandler.viewAppeared()
     }
     
     private func setupSubviews() {
@@ -98,5 +107,9 @@ final class AddTransactionViewController: UIViewController {
             confirmButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             confirmButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc private func didTapConfirmButton() {
+        eventsHandler.handleConfirmButtonPressed()
     }
 }

@@ -22,6 +22,7 @@ extension AppCoordinator: BalanceNavigationDelegate {
             balanceService: servicesAssembler.balanceService,
             resultDelegate: resultDelegate)
         let controller = AddTransactionViewController(viewEventsHandler: presenter)
+        presenter.view = controller
         navigationController.pushViewController(controller, animated: true)
     }
 }

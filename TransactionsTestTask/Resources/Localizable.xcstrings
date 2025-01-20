@@ -40,13 +40,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Balance: %.2f BTC"
+            "value" : "Balance: %@ BTC"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Баланс: %.2f BTC"
+            "value" : "Баланс: %@ BTC"
           }
         }
       }
@@ -99,6 +99,22 @@
         }
       }
     },
+    "electronics" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electronics"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Електроніка"
+          }
+        }
+      }
+    },
     "enter.amount" : {
       "localizations" : {
         "en" : {
@@ -111,6 +127,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Введіть суму"
+          }
+        }
+      }
+    },
+    "entertainment" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entertainment"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розваги"
+          }
+        }
+      }
+    },
+    "groceries" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groceries"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бакалія"
+          }
+        }
+      }
+    },
+    "other" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інше"
+          }
+        }
+      }
+    },
+    "restaurant" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurants"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ресторани"
           }
         }
       }
@@ -143,6 +223,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поповнити"
+          }
+        }
+      }
+    },
+    "transport" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transport"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Транспорт"
           }
         }
       }

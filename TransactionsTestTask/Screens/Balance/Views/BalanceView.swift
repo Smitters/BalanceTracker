@@ -134,12 +134,13 @@ class BalanceView: UIView {
 extension BalanceView {
     // MARK: - Public Method to Update Balance and Rates
     func updateBalance(with amount: Double) {
-        balanceLabel.text = String(format: String(localized: "balance.amount"), amount)
+        print("Set balance text to: \(amount.formatted())")
+        balanceLabel.text = String(format: String(localized: "balance.amount"), amount.formatted())
     }
     
     func setRate(_ rate: Double?) {
         if let rate {
-            rateLabel.text = String(format: String(localized: "balance.rate"), "\(rate)")
+            rateLabel.text = String(format: String(localized: "balance.rate"), "\(rate.formatted())")
         } else {
             rateLabel.text = String(format: String(localized: "balance.rate"), "...")
         }

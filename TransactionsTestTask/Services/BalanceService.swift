@@ -48,7 +48,7 @@ final class MobileBalanceService: BalanceService {
     
     @MainActor func subtract(_ amount: Double, category: ExpenseCategory) throws -> TransactionResult {
         do {
-            let transaction = Transaction(date: .now, amount: amount, type: .income)
+            let transaction = Transaction(date: .now, amount: amount, type: .expense(category))
             try persistenceManager.addAndSaveTransaction(transaction)
             
             var currentBalance = getCurrentBalance()

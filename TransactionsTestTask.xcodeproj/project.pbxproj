@@ -45,6 +45,8 @@
 		5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */; };
 		5F92B1CA2D3D9B59000A811C /* AddTransactionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */; };
 		5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */; };
+		5F92B1D22D3DBA2A000A811C /* ExpenseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */; };
+		5F92B1D62D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1D52D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
 		5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionResult.swift; sourceTree = "<group>"; };
 		5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+DataSource.swift"; sourceTree = "<group>"; };
+		5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F92B1D52D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				5F92B1C52D3D9869000A811C /* AddTransactionPresenter.swift */,
+				5F92B1D02D3DBA03000A811C /* Cells */,
 				5F92B1C12D3D97A9000A811C /* ViewController */,
 			);
 			path = AddTransaction;
@@ -314,10 +319,19 @@
 			isa = PBXGroup;
 			children = (
 				5F92B1BF2D3D9769000A811C /* AddTransactionViewController.swift */,
+				5F92B1D52D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift */,
 				5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */,
 				5F92B1C32D3D97C8000A811C /* AddTransactionViewController+Protocols.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5F92B1D02D3DBA03000A811C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +444,7 @@
 				5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */,
 				5F92B1C42D3D97C8000A811C /* AddTransactionViewController+Protocols.swift in Sources */,
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
+				5F92B1D62D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift in Sources */,
 				5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */,
 				5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */,
 				5F5495B62D3BF8C9002D043C /* AppCoordinator+Navigation.swift in Sources */,
@@ -449,6 +464,7 @@
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
 				1CA3B6602D22B0F500176711 /* Wallet.xcdatamodeld in Sources */,
 				5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */,
+				5F92B1D22D3DBA2A000A811C /* ExpenseCategoryCollectionViewCell.swift in Sources */,
 				5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
 			);
