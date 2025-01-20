@@ -15,4 +15,14 @@ extension Dictionary where Key == String, Value: RangeReplaceableCollection {
             }
         }
     }
+    
+    mutating func mergeByInsertingElements(_ other: Self) {
+        for (key, value) in other {
+            if self[key] != nil {
+                self[key]?.insert(contentsOf: value, at: 0 as! Value.Index)
+            } else {
+                self[key] = value
+            }
+        }
+    }
 }

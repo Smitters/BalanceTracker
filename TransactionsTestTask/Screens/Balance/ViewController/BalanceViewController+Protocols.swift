@@ -17,6 +17,7 @@ extension BalanceViewController {
         var sectionTitles: [String] { get }
         func getRowsCount(in section: Int) -> Int
         func getCellConfig(row: Int, section: Int) -> TransactionUIRepresentation
+        @MainActor func lastCellReached()
     }
     
     protocol BalanceViewConfigurable: AnyObject {

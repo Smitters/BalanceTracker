@@ -47,19 +47,23 @@ final class CoreDataManager {
                                    predicate: NSPredicate? = nil,
                                    sortDescriptors: [NSSortDescriptor]? = nil) throws -> [T] {
         let request = T.fetchRequest()
+        let count = try mainContext.count(for: request)
+        
+        if let limit {
+            request.fetchLimit = limit
+        }
+        if let offset {
+            if offset >= count {
+                throw FetchError.noMoreItems
+            }
+            request.fetchOffset = offset
+        }
         
         if let predicate {
             request.predicate = predicate
         }
         if let sortDescriptors {
             request.sortDescriptors = sortDescriptors
-        }
-        
-        if let limit {
-            request.fetchLimit = limit
-        }
-        if let offset {
-            request.fetchOffset = offset
         }
         
         return try mainContext.fetch(request) as! [T]
@@ -91,3 +95,8 @@ extension CoreDataManager: PersistanceManager {
         return try fetch(limit: limit, offset: offset, sortDescriptors: [sortDescriptor])
     }
 }
+
+enum FetchError: Error {
+    case noMoreItems
+}
+

@@ -15,6 +15,8 @@ protocol BalanceInteractorOutput: AnyObject {
 protocol BalanceInteractorInput: AnyObject {
     func startRateUpdates()
     func getBalance() -> Double
+    func handleAddedTransaction()
+    var hasNextPage: Bool { get }
     
     @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult
     @MainActor func loadNextTransactions() throws -> [Transaction]
@@ -22,14 +24,15 @@ protocol BalanceInteractorInput: AnyObject {
 
 class BalanceInteractor {
     
-    let bitcoinService: BitcoinRateService
-    let balanceService: BalanceService
-    let persistanceManager: PersistanceManager
+    private let bitcoinService: BitcoinRateService
+    private let balanceService: BalanceService
+    private let persistanceManager: PersistanceManager
     
     weak var output: BalanceInteractorOutput?
     
-    var cancellable: AnyCancellable?
-    var currentPage: Int = 1
+    private var cancellable: AnyCancellable?
+    private var offset: Int = 0
+    private(set) var hasNextPage: Bool = true
     
     init(bitcoinService: BitcoinRateService, balanceService: BalanceService, persistanceManager: PersistanceManager) {
         self.bitcoinService = bitcoinService
@@ -47,17 +50,39 @@ extension BalanceInteractor: BalanceInteractorInput {
     }
     
     @MainActor func loadNextTransactions() throws -> [Transaction] {
-        let offset = Constants.pageSize * (currentPage - 1)
-        let transactions = try persistanceManager.fetchTransactions(limit: Constants.pageSize, offset: offset)
-        return try transactions.compactMap { details in try Transaction.convert(from: details) }
+        do {
+            let transactions = try persistanceManager.fetchTransactions(limit: Constants.pageSize, offset: offset)
+            let mappedTransactions = try transactions.compactMap { details in try Transaction.convert(from: details) }
+            
+            if mappedTransactions.count < Constants.pageSize {
+                hasNextPage = false
+                offset = mappedTransactions.count
+            } else {
+                offset += Constants.pageSize
+                hasNextPage = true
+            }
+            
+            return mappedTransactions
+        } catch {
+            if let error = error as? FetchError, error == .noMoreItems {
+                hasNextPage = false
+                return []
+            } else {
+                throw error
+            }
+        }
     }
     
     func getBalance() -> Double {
         balanceService.getCurrentBalance()
     }
     
+    func handleAddedTransaction() {
+        offset += 1
+    }
+    
     @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult {
-        return try balanceService.add(amount)
+        try balanceService.add(amount)
     }
 }
 

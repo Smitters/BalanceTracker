@@ -7,15 +7,18 @@
 
 final class BalancePresenter {
     weak var view: BalanceViewController.BalanceViewConfigurable?
-    unowned let router: BalanceNavigationDelegate
-    let interactor: BalanceInteractorInput
+    
+    private unowned let router: BalanceNavigationDelegate
+    private let interactor: BalanceInteractorInput
+    private let analytics: AnalyticsService
     
     private var groupedTransactions: [String: [Transaction]] = [:]
     private var sortedKeys: [String] = []
     
-    init(router: BalanceNavigationDelegate, interactor: BalanceInteractorInput) {
+    init(router: BalanceNavigationDelegate, interactor: BalanceInteractorInput, analytics: AnalyticsService) {
         self.router = router
         self.interactor = interactor
+        self.analytics = analytics
     }
 }
 
@@ -24,16 +27,7 @@ extension BalancePresenter: BalanceViewController.EventHandler {
         interactor.startRateUpdates()
         let balance = interactor.getBalance()
         view?.update(balance: balance)
-        
-        do {
-            let transactions = try interactor.loadNextTransactions()
-            let grouped = Dictionary(grouping: transactions) { $0.date.formattedDay }
-            groupedTransactions.mergeByAppendingElements(grouped)
-            sortedKeys = groupedTransactions.keys.sorted()
-            view?.reloadData()
-        } catch {
-            print(error)
-        }
+        lastCellReached()
     }
     
     func handleTopUp(amount: Double) {
@@ -51,6 +45,19 @@ extension BalancePresenter: BalanceViewController.EventHandler {
     
     func didTapAddTransactionButton() {
         router.showAddTransactionScreen(resultDelegate: self)
+    }
+    
+    func lastCellReached() {
+        guard interactor.hasNextPage else { return }
+        do {
+            let transactions = try interactor.loadNextTransactions()
+            let grouped = Dictionary(grouping: transactions) { $0.date.formattedDay }
+            groupedTransactions.mergeByAppendingElements(grouped)
+            sortedKeys = groupedTransactions.keys.sorted()
+            view?.reloadData()
+        } catch {
+            analytics.trackEvent(name: "failed_to_load_next_transactions", parameters: ["error": error.localizedDescription])
+        }
     }
     
     var sectionsCount: Int {
@@ -87,10 +94,12 @@ extension BalancePresenter: AddTransactionResultHandler {
     func handle(result: TransactionResult) {
         switch result {
         case .completed(let transaction, newAmount: let newAmount):
+            interactor.handleAddedTransaction()
             view?.update(balance: newAmount)
             let key = transaction.date.formattedDay
-            groupedTransactions.mergeByAppendingElements([key: [transaction]])
+            groupedTransactions.mergeByInsertingElements([key: [transaction]])
             sortedKeys = groupedTransactions.keys.sorted()
+            view?.reloadData()
         case .canceled: break
         }
     }

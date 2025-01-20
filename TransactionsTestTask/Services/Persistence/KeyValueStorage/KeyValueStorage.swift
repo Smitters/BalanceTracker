@@ -13,10 +13,9 @@ protocol KeyValueStorage {
 }
 
 /// Implementation of Key-Value Storage using UserDefaults
-/// Per apple-docs its thread safe, so we do not need sync mechanism here
+/// Per apple-docs its thread safe:
 /// https://developer.apple.com/documentation/foundation/userdefaults
 final class UserDefaultsKeyValueStorage: KeyValueStorage {
-    
     func setValue(_ value: Double, forKey key: String) {
         UserDefaults.standard.setValue(value, forKey: key)
     }

@@ -28,5 +28,15 @@ extension BalanceViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = cell as? TransactionTableViewCell else { return }
         let configuration = eventsHandler.getCellConfig(row: indexPath.row, section: indexPath.section)
         cell.configure(with: configuration)
+        
+        if isLastCell(indePath: indexPath) {
+            eventsHandler.lastCellReached()
+        }
+    }
+    
+    private func isLastCell(indePath: IndexPath) -> Bool {
+        guard indePath.section == eventsHandler.sectionsCount - 1 else { return false }
+        guard indePath.row == eventsHandler.getRowsCount(in: indePath.section) - 1 else { return false }
+        return true
     }
 }

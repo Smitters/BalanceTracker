@@ -24,7 +24,9 @@ final class AppCoordinator {
             bitcoinService: servicesAssembler.bitcoinRateService,
             balanceService: servicesAssembler.balanceService,
             persistanceManager: servicesAssembler.persistenceManager)
-        let presenter = BalancePresenter(router: self, interactor: interactor)
+        let presenter = BalancePresenter(router: self,
+                                         interactor: interactor,
+                                         analytics: servicesAssembler.analyticsService)
         let balanceViewController = BalanceViewController(viewEventsHandler: presenter)
         presenter.view = balanceViewController
         interactor.output = presenter
