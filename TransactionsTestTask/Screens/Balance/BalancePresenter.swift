@@ -40,19 +40,11 @@ extension BalancePresenter: BalanceViewController.EventHandler {
     }
     
     func didTapTopupButton() {
-        Task {
-            await MainActor.run {
-                view?.showTopUpAlert()
-            }
-        }
+        Task { await view?.showTopUpAlert() }
     }
     
     func didTapAddTransactionButton() {
-        Task {
-            await MainActor.run {
-                router.showAddTransactionScreen(resultDelegate: self)
-            }
-        }
+        Task { await router.showAddTransactionScreen(resultDelegate: self) }
     }
     
     func lastCellReached() {
@@ -90,11 +82,7 @@ extension BalancePresenter: BalanceViewController.EventHandler {
 
 extension BalancePresenter: BalanceInteractorOutput {
     func rateReceived(_ rate: Rate) {
-        Task {
-            await MainActor.run {
-                view?.update(rate: RateUIRepresentation.convert(from: rate))
-            }
-        }
+        Task { await view?.update(rate: RateUIRepresentation.convert(from: rate)) }
     }
 }
 
@@ -107,10 +95,8 @@ extension BalancePresenter: AddTransactionResultHandler {
             groupedTransactions.mergeByInsertingElements([key: [transaction]])
             sortedKeys = groupedTransactions.keys.sorted()
             Task {
-                await MainActor.run {
-                    view?.update(balance: newAmount)
-                    view?.reloadData()
-                }
+                await view?.update(balance: newAmount)
+                await view?.reloadData()
             }
             
         case .canceled: break

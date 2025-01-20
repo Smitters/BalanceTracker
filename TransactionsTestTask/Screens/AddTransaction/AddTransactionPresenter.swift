@@ -31,10 +31,8 @@ final class AddTransactionPresenter {
 extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
     func viewAppeared() {
         Task {
-            await MainActor.run {
-                view?.selectCategory(at: selectedCategory)
-                view?.setConfirmButtonEnablement(false)
-            }
+            await view?.selectCategory(at: selectedCategory)
+            await view?.setConfirmButtonEnablement(false)
         }
     }
     
@@ -46,9 +44,7 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
         enteredAmount = amount
         let shouldEnableTransaction = amount != nil
         Task {
-            await MainActor.run {
-                view?.setConfirmButtonEnablement(shouldEnableTransaction)
-            }
+            await view?.setConfirmButtonEnablement(shouldEnableTransaction)
         }
     }
     
@@ -66,9 +62,7 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
         Task {
             let transactionResult = try await balanceService.subtract(amount, category: category)
             resultDelegate.handle(result: transactionResult)
-            await MainActor.run {
-                router.dismiss()
-            }
+            await router.dismiss()
         }
     }
 }
