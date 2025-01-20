@@ -8,20 +8,6 @@
 import Foundation
 import Combine
 
-protocol BalanceInteractorOutput: AnyObject {
-    @MainActor func rateReceived(_ rate: Rate)
-}
-
-protocol BalanceInteractorInput: AnyObject {
-    func startRateUpdates()
-    func getBalance() -> Double
-    func handleAddedTransaction()
-    var hasNextPage: Bool { get }
-    
-    @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult
-    @MainActor func loadNextTransactions() throws -> [Transaction]
-}
-
 class BalanceInteractor {
     
     private let bitcoinService: BitcoinRateService
@@ -49,7 +35,7 @@ extension BalanceInteractor: BalanceInteractorInput {
         bitcoinService.start()
     }
     
-    @MainActor func loadNextTransactions() throws -> [Transaction] {
+    func loadNextTransactions() throws -> [Transaction] {
         do {
             let transactions = try persistanceManager.fetchTransactions(limit: Constants.pageSize, offset: offset)
             let mappedTransactions = try transactions.compactMap { details in try Transaction.convert(from: details) }
@@ -81,7 +67,7 @@ extension BalanceInteractor: BalanceInteractorInput {
         offset += 1
     }
     
-    @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult {
+    func topUpBalance(_ amount: Double) throws -> TransactionResult {
         try balanceService.add(amount)
     }
 }

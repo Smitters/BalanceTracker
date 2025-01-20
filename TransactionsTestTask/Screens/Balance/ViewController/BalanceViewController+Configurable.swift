@@ -1,5 +1,5 @@
 //
-//  BalanceViewController.NavigationDelegate.swift
+//  BalanceViewController.Configurable.swift
 //  TransactionsTestTask
 //
 //  Created by Dmytro Smetankin on 18.01.2025.
@@ -8,28 +8,8 @@
 import Foundation
 import UIKit
 
-extension BalanceViewController {
-    protocol EventHandler: BalanceViewDelegate {
-        @MainActor func handleScreenLoading()
-        @MainActor func handleTopUp(amount: Double)
-        
-        var sectionsCount: Int { get }
-        var sectionTitles: [String] { get }
-        func getRowsCount(in section: Int) -> Int
-        func getCellConfig(row: Int, section: Int) -> TransactionUIRepresentation
-        @MainActor func lastCellReached()
-    }
-    
-    protocol BalanceViewConfigurable: AnyObject {
-        @MainActor func update(rate: ViewRate)
-        @MainActor func update(balance: Double)
-        func reloadData()
-        @MainActor func showTopUpAlert()
-    }
-}
-
-extension BalanceViewController: BalanceViewController.BalanceViewConfigurable {
-    @MainActor func update(rate: ViewRate) {
+extension BalanceViewController: BalanceViewController.Configurable {
+    func update(rate: RateUIRepresentation) {
         switch rate {
         case .loading:
             self.balanceView.setRate(nil)
@@ -38,7 +18,7 @@ extension BalanceViewController: BalanceViewController.BalanceViewConfigurable {
         }
     }
     
-    @MainActor func update(balance: Double) {
+    func update(balance: Double) {
         balanceView.updateBalance(with: balance)
     }
     
@@ -46,7 +26,7 @@ extension BalanceViewController: BalanceViewController.BalanceViewConfigurable {
         transactionsTableView.reloadData()
     }
     
-    @MainActor func showTopUpAlert() {
+    func showTopUpAlert() {
         let alert = UIAlertController(
             title: String(localized: "top.up.alert.title"),
             message: String(localized: "top.up.alert.message"),

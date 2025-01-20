@@ -7,16 +7,8 @@
 
 import UIKit
 
-// MARK: - BalanceViewDelegate Protocol
-protocol BalanceViewDelegate: AnyObject {
-    @MainActor func didTapTopupButton()
-    @MainActor func didTapAddTransactionButton()
-}
-
-// MARK: - BalanceView
 class BalanceView: UIView {
     
-    // MARK: - UI Elements
     private let balanceLabel: UILabel = {
         let label = UILabel()
         label.text = String(format: String(localized: "balance.amount"), 0)
@@ -48,10 +40,8 @@ class BalanceView: UIView {
         return button
     }()
     
-    // MARK: - Delegate
     weak var delegate: BalanceViewDelegate?
     
-    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -63,7 +53,6 @@ class BalanceView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup Views
     private func setupViews() {
         addSubview(balanceLabel)
         addSubview(rateLabel)
@@ -71,7 +60,6 @@ class BalanceView: UIView {
         addSubview(addTransactionButton)
     }
     
-    // MARK: - Setup Constraints
     private func setupConstraints() {
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         rateLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +69,6 @@ class BalanceView: UIView {
         rateLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         balanceLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         
-        // Constraints for balanceLabel
         let centerXConstraint = balanceLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         centerXConstraint.priority = .defaultLow
         NSLayoutConstraint.activate([
@@ -91,21 +78,18 @@ class BalanceView: UIView {
             balanceLabel.trailingAnchor.constraint(lessThanOrEqualTo: topupButton.leadingAnchor, constant: -8)
         ])
         
-        // Constraints for rateLabel
         NSLayoutConstraint.activate([
             rateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             rateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             rateLabel.trailingAnchor.constraint(lessThanOrEqualTo: topupButton.leadingAnchor, constant: -8)
         ])
         
-        // Constraints for topupButton
         NSLayoutConstraint.activate([
             topupButton.centerYAnchor.constraint(equalTo: balanceLabel.centerYAnchor),
             topupButton.leadingAnchor.constraint(equalTo: balanceLabel.trailingAnchor, constant: 8),
             topupButton.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -8)
         ])
         
-        // Constraints for addTransactionButton
         NSLayoutConstraint.activate([
             addTransactionButton.topAnchor.constraint(equalTo: topupButton.bottomAnchor, constant: 24),
             addTransactionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -132,9 +116,7 @@ class BalanceView: UIView {
 }
 
 extension BalanceView {
-    // MARK: - Public Method to Update Balance and Rates
     func updateBalance(with amount: Double) {
-        print("Set balance text to: \(amount.formatted())")
         balanceLabel.text = String(format: String(localized: "balance.amount"), amount.formatted())
     }
     

@@ -6,7 +6,7 @@
 //
 
 final class BalancePresenter {
-    weak var view: BalanceViewController.BalanceViewConfigurable?
+    weak var view: BalanceViewController.Configurable?
     
     private unowned let router: BalanceNavigationDelegate
     private let interactor: BalanceInteractorInput

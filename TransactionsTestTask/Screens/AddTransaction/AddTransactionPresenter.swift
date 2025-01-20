@@ -5,19 +5,15 @@
 //  Created by Dmytro Smetankin on 19.01.2025.
 //
 
-protocol AddTransactionResultHandler: AnyObject {
-    @MainActor func handle(result: TransactionResult)
-}
-
 import UIKit
 
 final class AddTransactionPresenter {
 
-    unowned let router: AddTransactionNavigationDelegate
-    unowned let resultDelegate: AddTransactionResultHandler
-    let balanceService: BalanceService
+    unowned private let router: AddTransactionNavigationDelegate
+    unowned private let resultDelegate: AddTransactionResultHandler
+    private let balanceService: BalanceService
     
-    weak var view: AddTransactionViewController.ViewConfigurable?
+    weak var view: AddTransactionViewController.Configurable?
     
     init(router: AddTransactionNavigationDelegate,
          balanceService: BalanceService,
@@ -27,9 +23,9 @@ final class AddTransactionPresenter {
         self.resultDelegate = resultDelegate
     }
     
-    var enteredAmount: Double?
-    lazy var selectedCategory: Int = categoriesConfiguration.count - 1
-    lazy var categoriesConfiguration = ExpenseCategory.allCases.compactMap { CategoryUIRepresentation.convert(from: $0) }
+    private var enteredAmount: Double?
+    private  lazy var selectedCategory: Int = categoriesConfiguration.count - 1
+    private  lazy var categoriesConfiguration = ExpenseCategory.allCases.compactMap { CategoryUIRepresentation.convert(from: $0) }
 }
 
 extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
@@ -60,7 +56,7 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
         guard let amount = enteredAmount else { return }
         let category = ExpenseCategory.allCases[selectedCategory]
         Task {
-            let transactionResult = try balanceService.subtract(amount, category: category)
+            let transactionResult = try await balanceService.subtract(amount, category: category)
             resultDelegate.handle(result: transactionResult)
             router.dismiss()
         }
