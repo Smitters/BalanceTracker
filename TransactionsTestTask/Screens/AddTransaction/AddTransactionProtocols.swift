@@ -19,7 +19,7 @@ extension AddTransactionViewController {
         func handleConfirmButtonPressed()
     }
     
-    protocol Configurable: AnyObject {
+    @MainActor protocol Configurable: AnyObject {
         func setConfirmButtonEnablement(_ isEnabled: Bool)
         func selectCategory(at index: Int)
     }

@@ -30,8 +30,12 @@ final class AddTransactionPresenter {
 
 extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
     func viewAppeared() {
-        view?.selectCategory(at: selectedCategory)
-        view?.setConfirmButtonEnablement(false)
+        Task {
+            await MainActor.run {
+                view?.selectCategory(at: selectedCategory)
+                view?.setConfirmButtonEnablement(false)
+            }
+        }
     }
     
     func cellTapped(at index: Int) {
@@ -41,7 +45,11 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
     func handleEnteredAmount(_ amount: Double?) {
         enteredAmount = amount
         let shouldEnableTransaction = amount != nil
-        view?.setConfirmButtonEnablement(shouldEnableTransaction)
+        Task {
+            await MainActor.run {
+                view?.setConfirmButtonEnablement(shouldEnableTransaction)
+            }
+        }
     }
     
     func numberOfCells() -> Int {
@@ -58,7 +66,9 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
         Task {
             let transactionResult = try await balanceService.subtract(amount, category: category)
             resultDelegate.handle(result: transactionResult)
-            router.dismiss()
+            await MainActor.run {
+                router.dismiss()
+            }
         }
     }
 }

@@ -30,12 +30,20 @@ class BalanceInteractor {
 extension BalanceInteractor: BalanceInteractorInput {
     func startRateUpdates() {
         cancellable = bitcoinService.ratePublisher.sink { [weak self] rate in
-            Task { await self?.output?.rateReceived(rate) }
+            self?.output?.rateReceived(rate)
         }
         bitcoinService.start()
     }
     
-    func loadNextTransactions() throws -> [Transaction] {
+    func getBalance() -> Double {
+        balanceService.getCurrentBalance()
+    }
+    
+    func handleAddedTransaction() {
+        offset += 1
+    }
+    
+    @MainActor func loadNextTransactions() throws -> [Transaction] {
         do {
             let transactions = try persistanceManager.fetchTransactions(limit: Constants.pageSize, offset: offset)
             let mappedTransactions = try transactions.compactMap { details in try Transaction.convert(from: details) }
@@ -59,15 +67,7 @@ extension BalanceInteractor: BalanceInteractorInput {
         }
     }
     
-    func getBalance() -> Double {
-        balanceService.getCurrentBalance()
-    }
-    
-    func handleAddedTransaction() {
-        offset += 1
-    }
-    
-    func topUpBalance(_ amount: Double) throws -> TransactionResult {
+    @MainActor func topUpBalance(_ amount: Double) throws -> TransactionResult {
         try balanceService.add(amount)
     }
 }

@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol BalanceNavigationDelegate: AnyObject {
+@MainActor protocol BalanceNavigationDelegate: AnyObject {
     func showAddTransactionScreen(resultDelegate: AddTransactionResultHandler)
 }
 
-protocol AddTransactionNavigationDelegate: AnyObject {
+@MainActor protocol AddTransactionNavigationDelegate: AnyObject {
     func dismiss()
 }
 
 extension AppCoordinator: BalanceNavigationDelegate {
-    func showAddTransactionScreen(resultDelegate: AddTransactionResultHandler) {
+    @MainActor func showAddTransactionScreen(resultDelegate: AddTransactionResultHandler) {
         let presenter = AddTransactionPresenter(
             router: self,
             balanceService: servicesAssembler.balanceService,
@@ -28,7 +28,7 @@ extension AppCoordinator: BalanceNavigationDelegate {
 }
 
 extension AppCoordinator: AddTransactionNavigationDelegate {
-    func dismiss() {
+    @MainActor func dismiss() {
         navigationController.popViewController(animated: true)
     }
 }

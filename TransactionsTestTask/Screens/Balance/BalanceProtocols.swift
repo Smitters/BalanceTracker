@@ -36,7 +36,7 @@ extension BalanceViewController {
         func getCellConfig(row: Int, section: Int) -> TransactionUIRepresentation
     }
     
-    protocol Configurable: AnyObject {
+    @MainActor protocol Configurable: AnyObject {
         func update(rate: RateUIRepresentation)
         func update(balance: Double)
         func reloadData()
