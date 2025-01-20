@@ -17,7 +17,7 @@ class BalanceInteractor {
     weak var output: BalanceInteractorOutput?
     
     private var cancellable: AnyCancellable?
-    private var offset: Int = 0
+    private(set) var offset: Int = 0
     private(set) var hasNextPage: Bool = true
     
     init(bitcoinService: BitcoinRateService, balanceService: BalanceService, persistanceManager: PersistanceManager) {

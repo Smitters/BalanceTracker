@@ -58,6 +58,11 @@
 		5FE38E922D3E9193004F7BC7 /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */; };
 		5FE38E942D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */; };
 		5FE38E962D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */; };
+		5FE38E982D3EAD7A004F7BC7 /* BalanceInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E972D3EAD7A004F7BC7 /* BalanceInteractorTests.swift */; };
+		5FE38E9A2D3EADB5004F7BC7 /* MockBitcoinRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E992D3EADB5004F7BC7 /* MockBitcoinRateService.swift */; };
+		5FE38E9C2D3EAE37004F7BC7 /* MockBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E9B2D3EAE37004F7BC7 /* MockBalanceService.swift */; };
+		5FE38E9E2D3EAE91004F7BC7 /* MockPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E9D2D3EAE91004F7BC7 /* MockPersistanceManager.swift */; };
+		5FE38EA02D3EAEE7004F7BC7 /* MockBalanceInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E9F2D3EAEE7004F7BC7 /* MockBalanceInteractorOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +131,11 @@
 		5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
 		5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
+		5FE38E972D3EAD7A004F7BC7 /* BalanceInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInteractorTests.swift; sourceTree = "<group>"; };
+		5FE38E992D3EADB5004F7BC7 /* MockBitcoinRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBitcoinRateService.swift; sourceTree = "<group>"; };
+		5FE38E9B2D3EAE37004F7BC7 /* MockBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBalanceService.swift; sourceTree = "<group>"; };
+		5FE38E9D2D3EAE91004F7BC7 /* MockPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistanceManager.swift; sourceTree = "<group>"; };
+		5FE38E9F2D3EAEE7004F7BC7 /* MockBalanceInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBalanceInteractorOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +216,7 @@
 		1CA3B66E2D22B0F600176711 /* TransactionsTestTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FE38E972D3EAD7A004F7BC7 /* BalanceInteractorTests.swift */,
 				5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */,
 				5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */,
 				5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */,
@@ -283,6 +294,10 @@
 		5F6069692D3D42A100CDDC6E /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				5FE38E9F2D3EAEE7004F7BC7 /* MockBalanceInteractorOutput.swift */,
+				5FE38E9D2D3EAE91004F7BC7 /* MockPersistanceManager.swift */,
+				5FE38E9B2D3EAE37004F7BC7 /* MockBalanceService.swift */,
+				5FE38E992D3EADB5004F7BC7 /* MockBitcoinRateService.swift */,
 				5F6069702D3D432E00CDDC6E /* MockKeyValueStorage.swift */,
 				5F60696E2D3D431C00CDDC6E /* MockRepeatableTimer.swift */,
 				5F60696C2D3D42F100CDDC6E /* MockAnalyticsService.swift */,
@@ -533,10 +548,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE38EA02D3EAEE7004F7BC7 /* MockBalanceInteractorOutput.swift in Sources */,
 				5F60696D2D3D42F100CDDC6E /* MockAnalyticsService.swift in Sources */,
+				5FE38E9A2D3EADB5004F7BC7 /* MockBitcoinRateService.swift in Sources */,
 				5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */,
 				5F6069682D3D401900CDDC6E /* MobileBitcoinRateServiceTests.swift in Sources */,
+				5FE38E982D3EAD7A004F7BC7 /* BalanceInteractorTests.swift in Sources */,
 				5FE38E962D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift in Sources */,
+				5FE38E9C2D3EAE37004F7BC7 /* MockBalanceService.swift in Sources */,
+				5FE38E9E2D3EAE91004F7BC7 /* MockPersistanceManager.swift in Sources */,
 				5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */,
 				5F60696F2D3D431C00CDDC6E /* MockRepeatableTimer.swift in Sources */,
 				5F60696B2D3D42CA00CDDC6E /* MockRequestExecutor.swift in Sources */,
