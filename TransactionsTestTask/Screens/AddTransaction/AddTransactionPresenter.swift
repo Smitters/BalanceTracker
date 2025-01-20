@@ -6,7 +6,7 @@
 //
 
 protocol AddTransactionResultHandler: AnyObject {
-    func handle(result: TransactionResult)
+    @MainActor func handle(result: TransactionResult)
 }
 
 import UIKit
@@ -29,34 +29,7 @@ final class AddTransactionPresenter {
     
     var enteredAmount: Double?
     lazy var selectedCategory: Int = categoriesConfiguration.count - 1
-    lazy var categoriesConfiguration = ExpenseCategory.allCases.compactMap { category in
-        switch category {
-        case .electronics:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "electronics"),
-                image: UIImage(systemName: "laptopcomputer.and.iphone")!)
-        case .entertainment:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "entertainment"),
-                image: UIImage(systemName: "gamecontroller")!)
-        case .groceries:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "groceries"),
-                image: UIImage(systemName: "cart")!)
-        case .restaurant:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "restaurant"),
-                image: UIImage(systemName: "cup.and.saucer.fill")!)
-        case .transport:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "transport"),
-                image: UIImage(systemName: "car")!)
-        case .other:
-            return AddTransactionViewController.CellConfiguration(
-                title: String(localized: "other"),
-                image: UIImage(systemName: "wallet.bifold")!)
-        }
-    }
+    lazy var categoriesConfiguration = ExpenseCategory.allCases.compactMap { CategoryUIRepresentation.convert(from: $0) }
 }
 
 extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
@@ -79,7 +52,7 @@ extension AddTransactionPresenter: AddTransactionViewController.EventHandler {
         categoriesConfiguration.count
     }
     
-    func cellAppearing(at index: Int) -> AddTransactionViewController.CellConfiguration {
+    func cellAppearing(at index: Int) -> CategoryUIRepresentation {
         return categoriesConfiguration[index]
     }
     

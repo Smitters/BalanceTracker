@@ -23,4 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        UserDefaults.standard.synchronize()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        UserDefaults.standard.synchronize()
+    }
 }

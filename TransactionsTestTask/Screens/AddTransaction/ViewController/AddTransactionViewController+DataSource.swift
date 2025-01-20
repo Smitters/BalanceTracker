@@ -37,10 +37,3 @@ extension AddTransactionViewController: UICollectionViewDataSource, UICollection
         eventsHandler.cellTapped(at: indexPath.item)
     }
 }
-
-extension AddTransactionViewController {
-    struct CellConfiguration {
-        let title: String
-        let image: UIImage
-    }
-}

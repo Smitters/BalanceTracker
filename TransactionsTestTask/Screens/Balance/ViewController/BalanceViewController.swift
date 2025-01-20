@@ -20,12 +20,14 @@ final class BalanceViewController: UIViewController {
     }
     
     // MARK: - BalanceView instance
-    let balanceView = BalanceView()
+    lazy var balanceView = BalanceView()
+    lazy var transactionsTableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupBalanceView()
+        setupTableView()
         eventsHandler.handleScreenLoading()
     }
     
@@ -53,6 +55,23 @@ final class BalanceViewController: UIViewController {
             balanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             balanceView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             balanceView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
+    
+    private func setupTableView() {
+        view.addSubview(transactionsTableView)
+        transactionsTableView.delegate = self
+        transactionsTableView.dataSource = self
+        transactionsTableView.estimatedRowHeight = 82
+        transactionsTableView.rowHeight = UITableView.automaticDimension
+        transactionsTableView.translatesAutoresizingMaskIntoConstraints = false
+        transactionsTableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: TransactionTableViewCell.reuseIdentifier)
+        
+        NSLayoutConstraint.activate([
+            transactionsTableView.topAnchor.constraint(equalTo: balanceView.bottomAnchor),
+            transactionsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            transactionsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            transactionsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
 }

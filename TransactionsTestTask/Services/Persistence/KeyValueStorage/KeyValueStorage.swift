@@ -12,18 +12,16 @@ protocol KeyValueStorage {
     func getValue(forKey key: String) -> Double?
 }
 
+/// Implementation of Key-Value Storage using UserDefaults
+/// Per apple-docs its thread safe, so we do not need sync mechanism here
+/// https://developer.apple.com/documentation/foundation/userdefaults
 final class UserDefaultsKeyValueStorage: KeyValueStorage {
-    private let userDefaultsQueue = DispatchQueue(label: "UserDefaultsKeyValueStorage.syncQueue")
     
     func setValue(_ value: Double, forKey key: String) {
-        userDefaultsQueue.sync {
-            UserDefaults.standard.setValue(value, forKey: key)
-        }
+        UserDefaults.standard.setValue(value, forKey: key)
     }
     
     func getValue(forKey key: String) -> Double? {
-        return userDefaultsQueue.sync {
-            UserDefaults.standard.double(forKey: key)
-        }
+        UserDefaults.standard.double(forKey: key)
     }
 }

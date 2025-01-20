@@ -12,12 +12,17 @@ extension BalanceViewController {
     protocol EventHandler: BalanceViewDelegate {
         @MainActor func handleScreenLoading()
         @MainActor func handleTopUp(amount: Double)
+        
+        var sectionsCount: Int { get }
+        var sectionTitles: [String] { get }
+        func getRowsCount(in section: Int) -> Int
+        func getCellConfig(row: Int, section: Int) -> TransactionUIRepresentation
     }
     
     protocol BalanceViewConfigurable: AnyObject {
         @MainActor func update(rate: ViewRate)
         @MainActor func update(balance: Double)
-        
+        func reloadData()
         @MainActor func showTopUpAlert()
     }
 }
@@ -34,6 +39,10 @@ extension BalanceViewController: BalanceViewController.BalanceViewConfigurable {
     
     @MainActor func update(balance: Double) {
         balanceView.updateBalance(with: balance)
+    }
+    
+    func reloadData() {
+        transactionsTableView.reloadData()
     }
     
     @MainActor func showTopUpAlert() {

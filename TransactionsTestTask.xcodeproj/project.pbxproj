@@ -47,6 +47,12 @@
 		5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */; };
 		5F92B1D22D3DBA2A000A811C /* ExpenseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */; };
 		5F92B1D62D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92B1D52D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift */; };
+		5FE38E7F2D3E5D01004F7BC7 /* CategoryUIRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E7E2D3E5CEA004F7BC7 /* CategoryUIRepresentation.swift */; };
+		5FE38E832D3E5E03004F7BC7 /* TransactionUIRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E822D3E5DFA004F7BC7 /* TransactionUIRepresentation.swift */; };
+		5FE38E862D3E5FB0004F7BC7 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E852D3E5FAC004F7BC7 /* DateFormatters.swift */; };
+		5FE38E882D3E606F004F7BC7 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E872D3E606F004F7BC7 /* Dictionary+Merge.swift */; };
+		5FE38E8A2D3E678C004F7BC7 /* BalanceViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E892D3E6781004F7BC7 /* BalanceViewController+DataSource.swift */; };
+		5FE38E8C2D3E6A73004F7BC7 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E8B2D3E6A72004F7BC7 /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,12 @@
 		5F92B1CD2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F92B1D52D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTransactionViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		5FE38E7E2D3E5CEA004F7BC7 /* CategoryUIRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIRepresentation.swift; sourceTree = "<group>"; };
+		5FE38E822D3E5DFA004F7BC7 /* TransactionUIRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUIRepresentation.swift; sourceTree = "<group>"; };
+		5FE38E852D3E5FAC004F7BC7 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		5FE38E872D3E606F004F7BC7 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Merge.swift"; sourceTree = "<group>"; };
+		5FE38E892D3E6781004F7BC7 /* BalanceViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+DataSource.swift"; sourceTree = "<group>"; };
+		5FE38E8B2D3E6A72004F7BC7 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +182,7 @@
 		1CA3B6542D22B0F500176711 /* TransactionsTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				5FE38E842D3E5F9F004F7BC7 /* Utils */,
 				5F9041762D3BBBBB0067E9F9 /* App */,
 				5F5495A62D3BC70F002D043C /* Coordinator */,
 				5F6069592D3D047900CDDC6E /* Models */,
@@ -218,10 +231,11 @@
 		5F6069592D3D047900CDDC6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */,
 				5F92B1C92D3D9B59000A811C /* AddTransactionResult.swift */,
 				5F60695F2D3D2AC800CDDC6E /* Rate.swift */,
+				5F6C7C212D3D6CC30063CAC8 /* Transaction.swift */,
 				5F60695A2D3D048000CDDC6E /* Responses */,
+				5FE38E7D2D3E5CD9004F7BC7 /* UIRepresentative */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				1CA3B6592D22B0F500176711 /* BalanceViewController.swift */,
+				5FE38E892D3E6781004F7BC7 /* BalanceViewController+DataSource.swift */,
 				5F6069722D3D59E100CDDC6E /* BalanceViewController+Configuration.swift */,
 				5F5495B32D3BF80E002D043C /* BalanceViewController+Protocols.swift */,
 			);
@@ -329,9 +344,28 @@
 		5F92B1D02D3DBA03000A811C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5FE38E8B2D3E6A72004F7BC7 /* TransactionTableViewCell.swift */,
 				5F92B1D12D3DBA19000A811C /* ExpenseCategoryCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5FE38E7D2D3E5CD9004F7BC7 /* UIRepresentative */ = {
+			isa = PBXGroup;
+			children = (
+				5FE38E822D3E5DFA004F7BC7 /* TransactionUIRepresentation.swift */,
+				5FE38E7E2D3E5CEA004F7BC7 /* CategoryUIRepresentation.swift */,
+			);
+			path = UIRepresentative;
+			sourceTree = "<group>";
+		};
+		5FE38E842D3E5F9F004F7BC7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5FE38E852D3E5FAC004F7BC7 /* DateFormatters.swift */,
+				5FE38E872D3E606F004F7BC7 /* Dictionary+Merge.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +478,7 @@
 				5F92B1CE2D3DA2E3000A811C /* AddTransactionViewController+DataSource.swift in Sources */,
 				5F92B1C42D3D97C8000A811C /* AddTransactionViewController+Protocols.swift in Sources */,
 				5F6069662D3D39EE00CDDC6E /* BalanceInteractor.swift in Sources */,
+				5FE38E7F2D3E5D01004F7BC7 /* CategoryUIRepresentation.swift in Sources */,
 				5F92B1D62D3DC0F1000A811C /* AddTransactionViewController+TextFieldDelegate.swift in Sources */,
 				5F6C7C242D3D70F40063CAC8 /* CoreDataManager.swift in Sources */,
 				5F92B1C62D3D9871000A811C /* AddTransactionPresenter.swift in Sources */,
@@ -457,14 +492,19 @@
 				5F6069752D3D64EE00CDDC6E /* BalanceService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
 				5F6C7C222D3D6CC70063CAC8 /* Transaction.swift in Sources */,
+				5FE38E862D3E5FB0004F7BC7 /* DateFormatters.swift in Sources */,
 				5F6069582D3CFE9E00CDDC6E /* RequestExecutor.swift in Sources */,
+				5FE38E8A2D3E678C004F7BC7 /* BalanceViewController+DataSource.swift in Sources */,
 				5F92B1C02D3D9773000A811C /* AddTransactionViewController.swift in Sources */,
 				1CA3B65A2D22B0F500176711 /* BalanceViewController.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
 				1CA3B6602D22B0F500176711 /* Wallet.xcdatamodeld in Sources */,
 				5F5495B42D3BF81C002D043C /* BalanceViewController+Protocols.swift in Sources */,
+				5FE38E882D3E606F004F7BC7 /* Dictionary+Merge.swift in Sources */,
+				5FE38E832D3E5E03004F7BC7 /* TransactionUIRepresentation.swift in Sources */,
 				5F92B1D22D3DBA2A000A811C /* ExpenseCategoryCollectionViewCell.swift in Sources */,
+				5FE38E8C2D3E6A73004F7BC7 /* TransactionTableViewCell.swift in Sources */,
 				5F6069732D3D59EF00CDDC6E /* BalanceViewController+Configuration.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
 			);

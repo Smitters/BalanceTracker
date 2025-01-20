@@ -12,7 +12,7 @@ extension AddTransactionViewController {
         @MainActor func viewAppeared()
         @MainActor func cellTapped(at index: Int)
         @MainActor func numberOfCells() -> Int
-        @MainActor func cellAppearing(at index: Int) -> CellConfiguration
+        @MainActor func cellAppearing(at index: Int) -> CategoryUIRepresentation
         @MainActor func handleEnteredAmount(_ amount: Double?)
         @MainActor func handleConfirmButtonPressed()
     }
