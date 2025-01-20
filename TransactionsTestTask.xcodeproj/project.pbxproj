@@ -57,6 +57,7 @@
 		5FE38E902D3E90EA004F7BC7 /* RateUIRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E8F2D3E90EA004F7BC7 /* RateUIRepresentation.swift */; };
 		5FE38E922D3E9193004F7BC7 /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */; };
 		5FE38E942D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */; };
+		5FE38E962D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		5FE38E8F2D3E90EA004F7BC7 /* RateUIRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUIRepresentation.swift; sourceTree = "<group>"; };
 		5FE38E912D3E918D004F7BC7 /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
 		5FE38E932D3E9828004F7BC7 /* BalanceViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,13 +192,13 @@
 		1CA3B6542D22B0F500176711 /* TransactionsTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				5FE38E842D3E5F9F004F7BC7 /* Utils */,
 				5F9041762D3BBBBB0067E9F9 /* App */,
 				5F5495A62D3BC70F002D043C /* Coordinator */,
 				5F6069592D3D047900CDDC6E /* Models */,
 				5F9041782D3BBCE80067E9F9 /* Resources */,
 				5F6069612D3D394D00CDDC6E /* Screens */,
 				0DF1D13E2D22DC2D001626E7 /* Services */,
+				5FE38E842D3E5F9F004F7BC7 /* Utils */,
 			);
 			path = TransactionsTestTask;
 			sourceTree = "<group>";
@@ -204,9 +206,10 @@
 		1CA3B66E2D22B0F600176711 /* TransactionsTestTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F6069692D3D42A100CDDC6E /* Mocks */,
-				5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */,
 				5F9041742D3AFCD70067E9F9 /* AnalyticsServiceTests.swift */,
+				5FE38E952D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift */,
+				5F6069672D3D401700CDDC6E /* MobileBitcoinRateServiceTests.swift */,
+				5F6069692D3D42A100CDDC6E /* Mocks */,
 			);
 			path = TransactionsTestTaskTests;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				5F60696D2D3D42F100CDDC6E /* MockAnalyticsService.swift in Sources */,
 				5F6069712D3D432E00CDDC6E /* MockKeyValueStorage.swift in Sources */,
 				5F6069682D3D401900CDDC6E /* MobileBitcoinRateServiceTests.swift in Sources */,
+				5FE38E962D3E99EC004F7BC7 /* DictionaryExtensionsTests.swift in Sources */,
 				5F9041752D3AFCD80067E9F9 /* AnalyticsServiceTests.swift in Sources */,
 				5F60696F2D3D431C00CDDC6E /* MockRepeatableTimer.swift in Sources */,
 				5F60696B2D3D42CA00CDDC6E /* MockRequestExecutor.swift in Sources */,
