@@ -37,7 +37,8 @@ extension BalanceViewController: BalanceViewController.Configurable {
             textField.delegate = self
         }
         alert.addAction(UIAlertAction(title: String(localized: "confirm"), style: .default) { [weak self] _ in
-            guard let text = alert.textFields?.first?.text, let amount = Double(text) else { return }
+            guard let text = alert.textFields?.first?.text,
+                  let amount = NumberFormatter().number(from: text)?.doubleValue else { return }
             self?.eventsHandler.handleTopUp(amount: amount)
         })
         alert.addAction(UIAlertAction(title: String(localized: "cancel"), style: .cancel))
